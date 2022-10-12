@@ -46,7 +46,7 @@ namespace biblioteca_proyecto
 
         private void txt1_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = conexion.MostrarTítulos(txt1.Text);//------------------------Muestra todos los títulos
+            dataGridView1.DataSource = conexion.MostrarTítulos(txt1.Text);//------------------------Muestra todos los títulos   
         }
 
         private void frmPrestamo_Load(object sender, EventArgs e)
@@ -67,14 +67,6 @@ namespace biblioteca_proyecto
             cantidad = cantidad - 1;
             conexion.ModificarDisponible(cantidad, idl);//------------------------------Actualiza la disponibilidad del libro 
             VerLibros();//----------------------------------------------------------------Se muestran los libros actualizados
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Estás seguro de que quieres cerrar la sesión?", "warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                this.Close();
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
